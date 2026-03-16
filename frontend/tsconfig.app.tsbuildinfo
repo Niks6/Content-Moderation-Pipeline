@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/api/safestream.ts","./src/components/flagreport.tsx","./src/components/moderationdashboard.tsx","./src/components/pipelineprogress.tsx","./src/components/severitybadge.tsx","./src/components/stagecard.tsx","./src/components/uploadzone.tsx","./src/types/index.ts"],"version":"5.9.3"}

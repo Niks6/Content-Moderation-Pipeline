@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: "Inter", sans-serif;
+  color: #e2e8f6;
+  background: #080a12;
+  --accent: #7c3aed;
+  --accent-cyan: #06b6d4;
+  --accent-rose: #f43f5e;
+  --surface: rgba(14, 17, 32, 0.85);
+  --border: rgba(255, 255, 255, 0.07);
+  --glow-violet: rgba(124, 58, 237, 0.35);
+  --glow-cyan: rgba(6, 182, 212, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 900px 600px at 10% -10%, rgba(124, 58, 237, 0.28), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 90% 10%, rgba(6, 182, 212, 0.15), transparent 60%),
+    radial-gradient(ellipse 600px 400px at 50% 100%, rgba(244, 63, 94, 0.08), transparent 55%),
+    #080a12;
+  background-attachment: fixed;
+}
+
+/* ── Typography ─────────────────────────────────────── */
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* ── Glass surfaces ─────────────────────────────────── */
+.glass {
+  background: rgba(15, 18, 36, 0.72);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-card {
+  background: rgba(16, 20, 40, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.glass-card:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 8px 40px rgba(124, 58, 237, 0.15), 0 4px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.07);
+  transform: translateY(-1px);
+}
+
+/* ── Gradient text ──────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #06b6d4 60%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-rose {
+  background: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glowing pill badge ─────────────────────────────── */
+.glow-badge-violet {
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+}
+
+.glow-badge-cyan {
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+}
+
+/* ── Pipeline connector ─────────────────────────────── */
+.pipeline-connector {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.5), rgba(6, 182, 212, 0.3));
+  overflow: hidden;
+}
+
+.pipeline-connector::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* ── Stage animations ───────────────────────────────── */
+@keyframes violetPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.3), 0 0 20px rgba(124, 58, 237, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.05), 0 0 36px rgba(124, 58, 237, 0.5);
+  }
+}
+
+.stage-running {
+  animation: violetPulse 1.4s ease-in-out infinite;
+  border-color: rgba(124, 58, 237, 0.7) !important;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* ── Critical severity pulse ────────────────────────── */
+@keyframes criticalPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-criticalPulse {
+  animation: criticalPulse 1s ease-in-out infinite;
+}
+
+/* ── Skeleton shimmer ───────────────────────────────── */
+.skeleton {
+  background: linear-gradient(110deg, #12172a 8%, #1c2240 18%, #12172a 33%);
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+  border-radius: 8px;
+}
+
+@keyframes shine {
+  to { background-position-x: -200%; }
+}
+
+/* ── Upload zone ────────────────────────────────────── */
+.upload-idle {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(124, 58, 237, 0.03);
+  transition: all 0.3s ease;
+}
+
+.upload-idle:hover {
+  border-color: rgba(124, 58, 237, 0.5);
+  background: rgba(124, 58, 237, 0.07);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.12);
+}
+
+.upload-dragging {
+  border-color: rgba(6, 182, 212, 0.7) !important;
+  background: rgba(6, 182, 212, 0.06) !important;
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.2) !important;
+}
+
+/* ── Progress bar ───────────────────────────────────── */
+.progress-track {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  animation: scanline 1.2s linear infinite;
+}
+
+/* ── Scrollbar styling ──────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
+::-webkit-scrollbar-thumb { background: rgba(124,58,237,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(124,58,237,0.6); }
+
+/* ── Fade-in entry ──────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.45s ease forwards;
+}
+

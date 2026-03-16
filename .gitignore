@@ -1,0 +1,86 @@
+# ───────────────────────────────────────────────
+# Environment & Secrets
+# ───────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ───────────────────────────────────────────────
+# Python / Backend
+# ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+*.so
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Model weights & large binary assets
+backend/weights/
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.onnx
+*.pb
+
+# Temporary upload / processing files
+backend/tmp_uploads/
+
+# ───────────────────────────────────────────────
+# Node / Frontend
+# ───────────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+dist/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+tsconfig.app.tsbuildinfo
+tsconfig.node.tsbuildinfo
+
+# Vite generated files
+vite.config.d.ts
+vite.config.js
+
+# ───────────────────────────────────────────────
+# Test / Media files
+# ───────────────────────────────────────────────
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wav
+*.mp3
+
+# ───────────────────────────────────────────────
+# OS & Editor
+# ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.idea/
+.vscode/
+*.swp
+*.swo
