@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: content-moderation-backend
+    env: docker
+    region: oregon 
+    plan: starter # ML models require decent memory, free tier may OOM
+    dockerfilePath: backend/Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: DEMO_MODE
+        value: "true" # Or false to actually run the heavy models
