@@ -1,6 +1,6 @@
-# SafeStream AI
+# Content Moderation Pipeline
 
-SafeStream AI is a three-stage pre-upload moderation pipeline for social media videos.
+Content Moderation Pipeline is a three-stage pre-upload moderation pipeline for social media videos.
 
 ## Features
 
@@ -16,7 +16,7 @@ SafeStream AI is a three-stage pre-upload moderation pipeline for social media v
 ## Project Structure
 
 ```text
-safestream/
+content-moderation-pipeline/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/

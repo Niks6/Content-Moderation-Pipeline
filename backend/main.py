@@ -62,7 +62,7 @@ class ProgressHub:
 REVIEW_QUEUE: list[dict[str, Any]] = []
 progress_hub = ProgressHub()
 
-app = FastAPI(title="SafeStream AI", version="0.1.0")
+app = FastAPI(title="Content Moderation Pipeline", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

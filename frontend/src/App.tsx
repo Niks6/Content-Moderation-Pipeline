@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { analyzeVideo, checkHealth, connectProgressSocket } from "./api/safestream";
+import { analyzeVideo, checkHealth, connectProgressSocket } from "./api/api";
 import ModerationDashboard from "./components/ModerationDashboard";
 import type { ProgressEvent, StageResult, UploadState } from "./types";
 

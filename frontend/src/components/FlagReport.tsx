@@ -1,5 +1,5 @@
 import type { FlagReport as FlagReportType } from "../types";
-import { sendToReviewQueue } from "../api/safestream";
+import { sendToReviewQueue } from "../api/api";
 import SeverityBadge from "./SeverityBadge";
 import { useState } from "react";
 
